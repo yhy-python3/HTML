@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>百度一下，你就知道</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+        }
+        .navbar {
+            padding: 10px;
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
+        }
+        .navbar a {
+            margin: 0 10px;
+            color: #000;
+            text-decoration: none;
+        }
+        .logo {
+            margin: 20px 0;
+        }
+        .search-container {
+            margin: 20px 0;
+        }
+        .search-box {
+            width: 50%;
+            padding: 10px;
+            border: 2px solid #4285f4;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        .search-button {
+            padding: 10px 20px;
+            border: none;
+            background-color: #4285f4;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 4px;
+            margin-left: 5px;
+        }
+    </style>
+    <script>
+        function search() {
+            var query = document.querySelector('.search-box').value;
+            if (query) {
+                window.location.href = 'https://www.baidu.com/s?wd=' + encodeURIComponent(query);
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelector('.search-button').addEventListener('click', search);
+            document.querySelector('.search-box').addEventListener('keydown', function(event) {
+                if (event.key === 'Enter') {
+                    search();
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+
+    <div class="navbar">
+        <a href="https://news.baidu.com">新闻</a>
+        <a href="https://www.hao123.com/?src=from_pc_logon">hao123</a>
+        <a href="https://map.baidu.com/">地图</a>
+        <a href="https://tieba.baidu.com/index.html">贴吧</a>
+        <a href="https://haokan.baidu.com/?sfrom=baidu-top">视频</a>
+        <a href="https://image.baidu.com">图片</a>
+        <a href="https://pan.baidu.com/">网盘</a>
+        <a href="https://wenku.baidu.com/">文库</a>
+        <a href="https://chat.baidu.com/">AI助手</a>
+        <a href="https://www.baidu.com/more/">更多</a>
+    </div>
+
+    <div class="logo">
+        <img src="baidu.jpg" alt="Logo" height="80">
+    </div>
+
+    <div class="search-container">
+        <input type="text" class="search-box" placeholder="">
+        <button class="search-button">百度一下</button>
+    </div>
+
+</body>
+</html>
