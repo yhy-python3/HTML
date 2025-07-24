@@ -1,2 +1,1 @@
-# HTML
-This is about HTML
+The "Baidu" folder is a simulation of Baidu.
